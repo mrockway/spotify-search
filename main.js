@@ -4,7 +4,7 @@ $(function() {
   // check to make sure JS is loaded
 console.log('JS is loaded!');
 	$('#search').on('submit', function(event) {
-		$('li').remove();
+		$('.results').empty();
 		$('.results').addClass('impatient');
 		event.preventDefault();
 		var searchTrack = $('#track').val();
@@ -13,10 +13,9 @@ console.log('JS is loaded!');
 			var trackResults = data.tracks.items;
 			// console.log(data.tracks.items);
 			$('.results').removeClass('impatient');	
-			console.log(trackResults);
-			// if (trackResults.total === 0) {
-			// 		$('<h1>Sorry no matches found.  Please search again</h1>').appendTo('.results');
-			// 	}		
+			if (data.tracks.total === 0) {
+					$('.results').append('<h1>Sorry no matches found.  Please search again</h1>');
+				}	
 			trackResults.forEach( function (trackEach) {
 				var tracks = trackEach.name;
 				var name = trackEach.artists[0].name;
