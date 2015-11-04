@@ -11,28 +11,26 @@
 
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="main.css">
-
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <title>Spotify Search</title>
 </head>
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">Spotify Search</h1>
+      <div class="col-md-8 col-md-offset-2">
+        <h1 class="searchHeader text-center">Spotify Search</h1>
         <hr>
         <form id="search">
-          <div class="form-group">
-            <input type="text" class="searchBar form-control" id="track" placeholder="Search Tracks">
+          <div class="searchGroup form-group">
+            <input type="text" class="searchBar form-control" id="track" placeholder="Search Tracks" autofocus/>
           </div>
-          <input type="submit" value="Search" class="btn btn-primary">
+          <input type="submit" value="Search" class="searchButton btn btn-primary"/>
         </form>
         <hr>
       </div>
     </div>
-    <div class="row">
-      <div class=" results col-md-6 col-md-offset-3">
-      <ul></ul>
-      </div>
+    <div class="trackContainer row">
+      <div class="results col-md-8 col-md-offset-2"></div>
     </div>
   </div>
   
