@@ -30,7 +30,27 @@
       </div>
     </div>
     <div class="trackContainer row">
-      <div class="results col-md-8 col-md-offset-2"></div>
+      <div class="results col-md-8 col-md-offset-2" id="results">
+      <script id="tracks-template" type="text/x-handlebars-template">
+            {{#each tracks}}
+            <div class="trackRows row">
+              {{#if album.images.[0]}}
+              <div class="artDiv col-md-4">
+                <img class="artwork" src="{{album.images.[0].url}}">
+              </div>
+              {{/if}}
+              <div class="trackInfo col-md-8">
+                <p class="trackText">Artist: {{artists.name}}</p>
+                <p>Album: {{album.name}}</p>
+                <p>Track: {{name}}</p>
+                <audio preload=none controls>
+                  <source src="{{preview_url}}" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+            {{/each}}
+          </script>
+      </div>
     </div>
   </div>
   
@@ -39,7 +59,8 @@
 
   <!-- bootstrap js -->
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+  <!-- handlebars js -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
   <!-- custom script -->
   <script type="text/javascript" src="main.js"></script>
 </body>
